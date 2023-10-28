@@ -8,13 +8,28 @@
 </head>
   <body>
     <div class="header">
+      
       <nav>
         <img src="images/logo.png" class="logo">
+        <button id="darkModeToggle">Light/Dark Mode</button>
+
         <div>
           <button class="langauge-btn">English<img src="images/down-icon.png"></button>
           <button>Sign In</button>
         </div>
       </nav>
+      <!-- <div id="coupon">
+        <button onClick="closeCoupon()">&times;</button>
+      </div> -->
+      <div class="coupon-overlay" id="coupon">
+        <div class="coupon-content">
+          <!-- Coupon content goes here -->
+          <h2>Special Offer</h2>
+          <p>Get 20% off with this coupon code! SP100</p>
+          <button id="close-coupon" onclick="closeCoupon()">Close</button>
+        </div>
+      </div>
+
       <div class="header-content">
         <h1>Unlimited movies TV <br>Shows and more.</h1>
         <h3>Watch anywhere. Cancel anytime.</h3>
@@ -27,6 +42,7 @@
     </div>
 
   <div class="features">
+    
     <div class="row">
       <div class="text-col">
         <h2>Enjoy on your TV.</h2>
@@ -159,5 +175,13 @@
         <button class="langauge-btn">English<img src="images/down-icon.png"></button>
         <p class="copyright-txt">Netflix India</p>
       </div>
+      <script>
+        window.onload = onloadPage()
+      </script>  
+   <script src="script.js"></script>
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
   </body>
 </html>
