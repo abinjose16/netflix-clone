@@ -42,4 +42,29 @@ function closeCoupon() {
   document.querySelector('.header-content').style.opacity = '1';
 }
 
+// Function to update geolocation information
+function updateGeolocationInfo(position) {
+  const geolocationInfo = document.getElementById('geolocation-info');
+  geolocationInfo.innerHTML = `
+    <p>Your current location:</p>
+    <p>Latitude: ${position.coords.latitude}</p>
+    <p>Longitude: ${position.coords.longitude}</p>
+  `;
+}
+
+// Function to handle geolocation errors
+function handleGeolocationError(error) {
+  const geolocationInfo = document.getElementById('geolocation-info');
+  geolocationInfo.innerHTML = `<p>Error getting geolocation: ${error.message}</p>`;
+}
+
+
+if ('geolocation' in navigator) {
+ navigator.geolocation.getCurrentPosition(updateGeolocationInfo, handleGeolocationError);
+} else {
+  const geolocationInfo = document.getElementById('geolocation-info');
+  geolocationInfo.innerHTML = '<p>Geolocation is not supported in your browser.</p>';
+}
+
+
 window.onload = onloadPage;
